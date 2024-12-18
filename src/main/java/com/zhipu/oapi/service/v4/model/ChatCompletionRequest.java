@@ -107,6 +107,15 @@ public class ChatCompletionRequest extends CommonRequest  implements ClientReque
 
     private String invokeMethod;
 
+    /**
+     * 模型返回的数据类型，目前支持text和audio两种模态
+     */
+    private List<String> modalities;
+
+    /**
+     * 音频输出设置
+     */
+    private AudioRequest audio;
 
     @Override
     public Map<String, Object> getOptions() {
@@ -126,6 +135,8 @@ public class ChatCompletionRequest extends CommonRequest  implements ClientReque
         paramsMap.put("stop", this.getStop());
         paramsMap.put("meta", this.getMeta());
         paramsMap.put("extra", this.getExtra());
+        paramsMap.put("modalities", this.getModalities());
+        paramsMap.put("audio", this.getAudio());
         if(this.getExtraJson() !=null){
             paramsMap.putAll(this.getExtraJson());
         }

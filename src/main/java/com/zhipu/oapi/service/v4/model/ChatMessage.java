@@ -23,6 +23,7 @@ public class ChatMessage extends ObjectNode {
 
     private String role;
     private Object content;
+    private AudioResult audio;
 
     private String name;
 
